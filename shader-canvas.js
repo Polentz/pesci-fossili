@@ -8,6 +8,7 @@ const shader = () => {
     sandbox.setUniform("seed", Math.random());
 };
 
-window.addEventListener("load", () => {
-    shader();
-});
+// window.addEventListener("load", () => {
+
+// });
+shader();

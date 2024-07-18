@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="shader.css">
 </head>
 
-<body>
+<body onload="history.scrollRestoration = 'manual'">
   <div class="menu-mobile">
     <div class="menu-name">
       <a href="index.html">AA</a>
@@ -42,12 +42,119 @@
       <a id="info-btn" class="link menu-items">I pianti e i lamenti dei pesci fossili</a>
     </div>
   </nav>
+
+  <div class="sidebar">
+    <ul>
+      <li>READING ROOM</li>
+      <li>
+        <p id="bennet" class="link sidebar-items">Materia vibrante</p>
+        <p class="sidebar-info">Jane Bennet</p>
+      </li>
+      <li>
+        <p id="irigaray" class="link sidebar-items">L'oblio dell'aria</p>
+        <p class="sidebar-info">Luce Irigaray</p>
+      </li>
+      <li>
+        <p id="tripaldi" class="link sidebar-items">Menti parallele</p>
+        <p class="sidebar-info">Laura Tripaldi</p>
+      </li>
+    </ul>
+  </div>
+
   <section class="cover">
     <!-- glsl canvas -->
   </section>
-  <main class="content">
-    <!-- <section class="library-window">
-      <div class="text-box"></div>
+  <main class="content main">
+    <section class="introduction-section">
+      <div class="grid">
+        <div class="introduction-container area-3-6">
+          <p>Al confine sfumato tra organico e inorganico, tra vita e non-vita, il fossile è una testimonianza materiale
+            e poetica dello scorrere e dello stratificarsi del tempo.</p>
+          <p><em>I pianti e I lamenti dei pesci fossili</em> prende spunto da queste suggestioni per tentare di
+            costruire relazioni tra corpi e tempi incommensurabilmente distanti e differenti, piangendo il ciclo eterno
+            della trasformazione della materia, della vita e della morte, nel contesto della Sesta Estinzione.</p>
+          <p>Le possibilità della relazione sono esplorate dai corpi delle danzatrici attraverso due interfacce: la
+            pelle o membrana, che funge da motore del movimento connettendo l'interno e l'esterno del corpo; e l'aria,
+            che viene attraversata dalle loro voci e trasformata in uno “spazio prima di ogni localizzazione”.</p>
+          <p>Lo spettacolo prende la forma di una progressiva stratificazione di pratiche corporee e vocali che richiama
+            la struttura stessa del fossile.</p>
+        </div>
+      </div>
+    </section>
+    <section id="bennet-content" class="content-drawer">
+      <div class="content-drawer-wrapper text-box">
+        <div class="text-container">
+          <div class="text-title">
+            <p>Jane Bennet</p>
+            <h2>Materia vibrante</h2>
+            <h3>Un'ecologia politica delle cose</h3>
+          </div>
+          <div class="text-excerpt">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Fermentum et sollicitudin ac orci phasellus egestas. Ut eu sem integer vitae justo
+              eget magna fermentum iaculis. Urna molestie at elementum eu facilisis sed odio morbi. Vestibulum lorem sed
+              risus ultricies tristique. Est sit amet facilisis magna. Venenatis lectus magna fringilla urna porttitor
+              rhoncus dolor purus. Fames ac turpis egestas integer eget aliquet. Fames ac turpis egestas maecenas
+              pharetra. A cras semper auctor neque vitae tempus quam pellentesque nec. Odio pellentesque diam volutpat
+              commodo sed egestas. Nec ullamcorper sit amet risus nullam. Non enim praesent elementum facilisis. Sed
+              lectus vestibulum mattis ullamcorper. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices.
+              Egestas integer eget aliquet nibh praesent tristique magna sit. Lorem sed risus ultricies tristique nulla
+              aliquet enim tortor at. Urna neque viverra justo nec ultrices dui sapien.</p>
+
+            <p>Phasellus vestibulum lorem sed risus ultricies tristique. Integer enim neque volutpat ac tincidunt. Id
+              venenatis a condimentum vitae sapien pellentesque habitant morbi. Cras sed felis eget velit aliquet
+              sagittis id consectetur. Adipiscing elit ut aliquam purus sit. Consectetur a erat nam at. Eros in cursus
+              turpis massa tincidunt. Mattis aliquam faucibus purus in massa tempor nec feugiat. Ullamcorper a lacus
+              vestibulum sed arcu non odio euismod lacinia. Dignissim cras tincidunt lobortis feugiat vivamus at augue
+              eget arcu. Nunc sed augue lacus viverra vitae congue. Pellentesque adipiscing commodo elit at imperdiet
+              dui accumsan sit. Amet aliquam id diam maecenas ultricies mi. Mauris in aliquam sem fringilla ut. Sit amet
+              consectetur adipiscing elit ut. Sit amet volutpat consequat mauris nunc congue. Sagittis aliquam malesuada
+              bibendum arcu vitae elementum curabitur vitae. Pharetra convallis posuere morbi leo urna molestie at.
+              Mauris pharetra et ultrices neque ornare aenean euismod.</p>
+          </div>
+        </div>
+        <div class="shape-container"></div>
+      </div>
+      <div id="close-btn"></div>
+    </section>
+    <section id="irigaray-content" class="content-drawer">
+      <div class="content-drawer-wrapper text-box">
+        <div class="text-container">
+          <div class="text-title">
+            <p>Luce Irigaray</p>
+            <h2>L'oblio dell'aria</h2>
+          </div>
+          <div class="text-excerpt">
+            <p>Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. Augue interdum velit euismod in
+              pellentesque massa placerat. Diam maecenas sed enim ut sem viverra aliquet. Adipiscing elit ut aliquam
+              purus sit amet luctus. Mauris a diam maecenas sed enim ut sem viverra aliquet. Hendrerit dolor magna
+              eget est. Justo laoreet sit amet cursus sit amet dictum sit amet. Sit amet est placerat in egestas erat
+              imperdiet sed. Consequat nisl vel pretium lectus quam. Egestas pretium aenean pharetra magna ac placerat
+              vestibulum lectus mauris. Rhoncus mattis rhoncus urna neque. Elit duis tristique sollicitudin nibh.
+              Gravida dictum fusce ut placerat orci nulla pellentesque. Viverra aliquet eget sit amet tellus. Morbi
+              quis commodo odio aenean sed adipiscing diam donec adipiscing. Sed euismod nisi porta lorem mollis. Diam
+              quam nulla porttitor massa id neque aliquam vestibulum morbi. Sit amet purus gravida quis blandit turpis
+              cursus in hac. Quam elementum pulvinar etiam non. Odio ut enim blandit volutpat maecenas volutpat.</p>
+
+            <p>Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. Augue interdum velit euismod in
+              pellentesque massa placerat. Diam maecenas sed enim ut sem viverra aliquet. Adipiscing elit ut aliquam
+              purus sit amet luctus. Mauris a diam maecenas sed enim ut sem viverra aliquet. Hendrerit dolor magna
+              eget est. Justo laoreet sit amet cursus sit amet dictum sit amet. Sit amet est placerat in egestas erat
+              imperdiet sed. Consequat nisl vel pretium lectus quam. Egestas pretium aenean pharetra magna ac placerat
+              vestibulum lectus mauris. Rhoncus mattis rhoncus urna neque. Elit duis tristique sollicitudin nibh.
+              Gravida dictum fusce ut placerat orci nulla pellentesque. Viverra aliquet eget sit amet tellus. Morbi
+              quis commodo odio aenean sed adipiscing diam donec adipiscing. Sed euismod nisi porta lorem mollis. Diam
+              quam nulla porttitor massa id neque aliquam vestibulum morbi. Sit amet purus gravida quis blandit turpis
+              cursus in hac. Quam elementum pulvinar etiam non. Odio ut enim blandit volutpat maecenas volutpat.</p>
+          </div>
+        </div>
+        <div class="shape-container"></div>
+      </div>
+    </section>
+    <!-- <section id="tripaldi-content" class="content-drawer">
+      <div class="text-box">
+
+      </div>
     </section> -->
   </main>
   <div class="line"></div>
