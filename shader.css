@@ -135,7 +135,7 @@ main.content {
   font-weight: 400;
 }
 
-#close-btn {
+.close-btn {
   width: 15px;
   height: 15px;
   position: absolute;
