@@ -6,8 +6,8 @@ const shader = () => {
     cover.appendChild(canvas);
     sandbox.load(frag);
     sandbox.setUniform("seed", Math.random());
-}
+};
 
 window.addEventListener("load", () => {
     shader();
-})
+});

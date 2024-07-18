@@ -26,13 +26,11 @@ canvas {
   width: 100vmax;
   height: 100vmax;
   pointer-events: none;
-  /* background-color: #ffffff45;
-  backdrop-filter: grayscale(0.8); */
   filter: grayscale(0.8) opacity(0.75);
   z-index: 1;
 }
 
-.library-window {
+/* .library-window {
   width: 100vmax;
   height: 75vh;
   position: fixed;
@@ -41,7 +39,7 @@ canvas {
   transform: translate(-50%, -50%);
   z-index: 3;
   padding: 0 30px;
-}
+} */
 
 /* .library-window .text-box {
   width: 100%;
