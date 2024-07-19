@@ -11,15 +11,25 @@ body {
   font-size: 5vw;
   font-weight: 100;
   line-height: 1.1;
-  text-align: right;
-  margin-bottom: 70px;
-  padding-right: 30px;
   transition: opacity .5s ease-in-out;
 }
 
 .introduction-section.--opacity {
   opacity: 0;
   pointer-events: none;
+}
+
+.introduction-container {
+  padding-right: 30px;
+}
+
+.introduction-container:nth-of-type(1) {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.introduction-container:nth-of-type(2) {
+  text-align: left;
 }
 
 .introduction-container p:not(:last-of-type) {

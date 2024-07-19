@@ -47,21 +47,7 @@ body {
 p::-moz-selection,
 h1::-moz-selection,
 h2::-moz-selection,
-br::-moz-selection,
-span::-moz-selection,
-a::-moz-selection,
-li::-moz-selection,
-img::-moz-selection,
-audio::-moz-selection,
-video::-moz-selection,
-div::-moz-selection,
-em::-moz-selection {
-  color: #ff0055;
-}
-
-p::-moz-selection,
-h1::-moz-selection,
-h2::-moz-selection,
+h3::-moz-selection,
 br::-moz-selection,
 span::-moz-selection,
 a::-moz-selection,
@@ -77,6 +63,7 @@ em::-moz-selection {
 p::selection,
 h1::selection,
 h2::selection,
+h3::selection,
 br::selection,
 span::selection,
 a::selection,
