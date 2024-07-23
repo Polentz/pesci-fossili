@@ -18,13 +18,13 @@ animate(
     { duration: 1 },
 );
 
-animate(
-    ".sidebar li",
-    {
-        opacity: [0, 1],
-    },
-    { duration: 1, delay: stagger(0.35) },
-);
+// animate(
+//     ".sidebar li",
+//     {
+//         opacity: [0, 1],
+//     },
+//     { duration: 1, delay: stagger(0.35) },
+// );
 
 // animate(
 //     ".introduction-container",
@@ -42,11 +42,19 @@ animate(
 // });
 
 const object = (container, shape) => {
-    const camera = new PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
+    const element = document.querySelector(".shape-container");
+    const positionInfo = element.getBoundingClientRect();
+    const elementHeight = positionInfo.height;
+    const elementWidth = positionInfo.width;
+
+    // const camera = new PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
+    const camera = new PerspectiveCamera(70, elementWidth / elementHeight, 0.1, 100);
     const scene = new Scene();
     const renderer = new WebGLRenderer({ antialias: true });
+
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(elementWidth, elementHeight);
     renderer.setClearColor(0x000000, 0);
 
     container.appendChild(renderer.domElement);
@@ -76,9 +84,11 @@ const object = (container, shape) => {
     controls.update();
 
     const resize = () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        // camera.aspect = window.innerWidth / window.innerHeight;
+        camera.aspect = elementWidth / elementHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        // renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(elementWidth, elementHeight);
     };
 
     const render = () => {
@@ -93,25 +103,49 @@ const object = (container, shape) => {
 
 const createOne = () => {
     const container = document.querySelector("#bennet-content .shape-container");
-    const geometry = new TorusKnotGeometry(3, 0.8, 300, 20, 8, 4);
+    const geometry = new TorusKnotGeometry(3.5, 0.8, 300, 20, 8, 4);
     const material = new MeshLambertMaterial({ color: 0x987D9A });
     const shape = new Mesh(geometry, material);
     object(container, shape);
 };
 
 const createTwo = () => {
-    const container = document.querySelector("#irigaray-content .shape-container");;
-    // const geometry = new TorusKnotGeometry(2, 2, 300, 3, 2, 3);
-    const geometry = new TorusKnotGeometry(3, 1, 300, 20, 10, 15);
-    const material = new MeshLambertMaterial({ color: 0xFEFBD8 });
+    const container = document.querySelector("#caillois-content .shape-container");
+    const geometry = new TorusKnotGeometry(3.5, 2, 66, 3, 20, 1);
+    const material = new MeshLambertMaterial({ color: 0xFFAAAA });
     const shape = new Mesh(geometry, material);
     object(container, shape);
 };
 
 const createThree = () => {
+    const container = document.querySelector("#irigaray-content .shape-container");;
+    const geometry = new TorusKnotGeometry(4, 1, 300, 20, 10, 15);
+    const material = new MeshLambertMaterial({ color: 0xFEFBD8 });
+    const shape = new Mesh(geometry, material);
+    object(container, shape);
+};
+
+const createFour = () => {
     const container = document.querySelector("#tripaldi-content .shape-container");;
-    const geometry = new TorusKnotGeometry(3.5, 0.5, 300, 20, 10, 12);
+    const geometry = new TorusKnotGeometry(3.5, 0.8, 300, 20, 10, 12);
     const material = new MeshLambertMaterial({ color: 0xEECEB9 });
+    const shape = new Mesh(geometry, material);
+    object(container, shape);
+};
+
+const createFive = () => {
+    const container = document.querySelector("#manin-content .shape-container");;
+    const geometry = new TorusKnotGeometry(2, 2.5, 52, 8, 9, 3);
+    const material = new MeshLambertMaterial({ color: 0xF6FB7A });
+    const shape = new Mesh(geometry, material);
+    object(container, shape);
+};
+
+const createSix = () => {
+    const container = document.querySelector("#castrovillari-content .shape-container");;
+    // const geometry = new TorusKnotGeometry(2.5, 2.5, 300, 3, 2, 3);
+    const geometry = new TorusKnotGeometry(3.5, 0.8, 300, 20, 8, 6);
+    const material = new MeshLambertMaterial({ color: 0xBEC6A0 });
     const shape = new Mesh(geometry, material);
     object(container, shape);
 };
@@ -119,33 +153,26 @@ const createThree = () => {
 createOne();
 createTwo();
 createThree();
+createFour();
+createFive();
+createSix()
 
 const drawerOpener = () => {
     const links = document.querySelectorAll(".link");
     const drawers = document.querySelectorAll(".content-drawer");
-    const closeBtns = document.querySelectorAll(".close-btn");
-    const mainContent = document.querySelector(".introduction-section");
-    const mainContentParagraphs = mainContent.querySelectorAll("p");
     links.forEach(link => {
         const linkId = link.id;
         drawers.forEach(drawer => {
             const drawerId = drawer.id;
             link.addEventListener("click", () => {
-                mainContent.classList.add("--opacity");
                 if (drawerId.includes(linkId)) {
+                    drawer.classList.remove("--close");
                     drawer.classList.add("--open");
                 } else {
+                    drawer.classList.add("--close");
                     drawer.classList.remove("--open");
                 };
             });
-        });
-    });
-    closeBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            drawers.forEach(drawer => {
-                drawer.classList.remove("--open");
-            });
-            mainContent.classList.remove("--opacity");
         });
     });
 };
