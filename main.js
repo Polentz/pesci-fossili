@@ -1,4 +1,4 @@
-import { animate, stagger, inView } from 'motion';
+import { animate } from 'motion';
 import {
     DirectionalLight,
     Mesh,
@@ -17,29 +17,6 @@ animate(
     },
     { duration: 1 },
 );
-
-// animate(
-//     ".sidebar li",
-//     {
-//         opacity: [0, 1],
-//     },
-//     { duration: 1, delay: stagger(0.35) },
-// );
-
-// animate(
-//     ".introduction-container",
-//     {
-//         y: [100, 0],
-//         opacity: [0, 1],
-//     },
-//     { duration: 1 },
-// );
-
-// animate('.introduction-container p', { opacity: 0 });
-
-// inView('.introduction-container p', (info) => {
-//     animate(info.target, { opacity: 1 }, { duration: 1, delay: 0.25 })
-// });
 
 const object = (container, shape) => {
     const element = document.querySelector(".shape-container");
@@ -228,6 +205,13 @@ const audioPlayer = () => {
     });
 };
 
+const documentHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+};
+
+window.addEventListener("resize", documentHeight)
+documentHeight();
 openElement("info-btn", "project", "open");
 openElement("info-btn-mobile", "project", "open")
 openElement("close-btn", "project", "open");
