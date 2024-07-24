@@ -111,16 +111,16 @@ const createOne = () => {
 
 const createTwo = () => {
     const container = document.querySelector("#caillois-content .shape-container");
-    const geometry = new TorusKnotGeometry(3.5, 2, 66, 3, 20, 1);
+    const geometry = new TorusKnotGeometry(3, 2, 66, 3, 20, 1);
     const material = new MeshLambertMaterial({ color: 0xFFAAAA });
     const shape = new Mesh(geometry, material);
     object(container, shape);
 };
 
 const createThree = () => {
-    const container = document.querySelector("#irigaray-content .shape-container");;
-    // const geometry = new TorusKnotGeometry(4, 1, 300, 20, 10, 15);
-    const geometry = new TorusKnotGeometry(4, 0.8, 34, 20, 6, 9);
+    const container = document.querySelector("#irigaray-content .shape-container");
+    // const geometry = new TorusKnotGeometry(4, 0.8, 34, 20, 6, 9);
+    const geometry = new TorusKnotGeometry(3.5, 0.6, 300, 20, 1, 7);
     const material = new MeshLambertMaterial({ color: 0xFEFBD8 });
     const shape = new Mesh(geometry, material);
     object(container, shape);
@@ -151,12 +151,21 @@ const createSix = () => {
     object(container, shape);
 };
 
+const createSeven = () => {
+    const container = document.querySelector("#rigal-content .shape-container");;
+    const geometry = new TorusKnotGeometry(3.2, 0.8, 300, 20, 4, 10);
+    const material = new MeshLambertMaterial({ color: 0x77E4C8 });
+    const shape = new Mesh(geometry, material);
+    object(container, shape);
+};
+
 createOne();
 createTwo();
 createThree();
 createFour();
 createFive();
 createSix();
+createSeven();
 
 const openElement = (trigger, element, className) => {
     document.getElementById(trigger).addEventListener("click", (event) => {
@@ -166,7 +175,7 @@ const openElement = (trigger, element, className) => {
 };
 
 const drawerOpener = () => {
-    const links = document.querySelectorAll(".link");
+    const links = document.querySelectorAll(".content-index .sidebar-items");
     const drawers = document.querySelectorAll(".content-drawer");
     links.forEach(link => {
         const linkId = link.id;
@@ -185,7 +194,42 @@ const drawerOpener = () => {
     });
 };
 
+const inViewport = (e) => {
+    const elementRect = e.getBoundingClientRect();
+    return (elementRect.top < innerHeight / 2 && elementRect.bottom > 0);
+};
+
+const audioPlayer = () => {
+    const audioComponent = document.querySelector(".audio-component");
+    const audioText = audioComponent.querySelector(".audio-player-wrapper span");
+    const playButton = audioComponent.querySelector(".play-btn");
+    const audioFile = audioComponent.querySelector("audio");
+    audioFile.volume = 0.3;
+    const playAudio = (audio) => {
+        if (audio.paused) {
+            audio.play();
+            audioText.innerHTML = "Sound off";
+        } else {
+            audio.pause();
+            audioText.innerHTML = "Sound on";
+        };
+    };
+    playButton.addEventListener("click", () => {
+        playAudio(audioFile);
+    });
+
+    const section = document.querySelector(".reading-room-wrapper");
+    document.addEventListener("scroll", () => {
+        if (inViewport(section)) {
+            audioComponent.classList.add("--translate");
+        } else {
+            audioComponent.classList.remove("--translate");
+        };
+    });
+};
+
 openElement("info-btn", "project", "open");
 openElement("info-btn-mobile", "project", "open")
 openElement("close-btn", "project", "open");
 drawerOpener();
+audioPlayer();
