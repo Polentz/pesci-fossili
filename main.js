@@ -74,7 +74,7 @@ const object = (container, shape) => {
     scene.add(camera);
     scene.add(shape);
 
-    camera.position.set(0, 12, 12);
+    camera.position.set(1, 1, 15);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
@@ -119,7 +119,8 @@ const createTwo = () => {
 
 const createThree = () => {
     const container = document.querySelector("#irigaray-content .shape-container");;
-    const geometry = new TorusKnotGeometry(4, 1, 300, 20, 10, 15);
+    // const geometry = new TorusKnotGeometry(4, 1, 300, 20, 10, 15);
+    const geometry = new TorusKnotGeometry(4, 0.8, 34, 20, 6, 9);
     const material = new MeshLambertMaterial({ color: 0xFEFBD8 });
     const shape = new Mesh(geometry, material);
     object(container, shape);
@@ -155,7 +156,14 @@ createTwo();
 createThree();
 createFour();
 createFive();
-createSix()
+createSix();
+
+const openElement = (trigger, element, className) => {
+    document.getElementById(trigger).addEventListener("click", (event) => {
+        document.getElementById(element).classList.toggle(className);
+        event.stopPropagation();
+    });
+};
 
 const drawerOpener = () => {
     const links = document.querySelectorAll(".link");
@@ -177,4 +185,7 @@ const drawerOpener = () => {
     });
 };
 
+openElement("info-btn", "project", "open");
+openElement("info-btn-mobile", "project", "open")
+openElement("close-btn", "project", "open");
 drawerOpener();

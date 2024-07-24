@@ -23,8 +23,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="shader.css">
 </head>
+<!-- onload="history.scrollRestoration = 'manual'" -->
 
-<body onload="history.scrollRestoration = 'manual'">
+<body>
   <div class="menu-mobile">
     <div class="menu-name">
       <a href="index.html">AA</a>
@@ -48,7 +49,7 @@
     </div>
 
     <div class="menu-links area-4-6">
-      <a id="info-btn" class="menu-items">I pianti e i lamenti dei pesci fossili</a>
+      <a id="info-btn" class="link menu-items">I pianti e i lamenti dei pesci fossili</a>
     </div>
   </nav>
   <div class="cover"></div>
@@ -92,6 +93,9 @@
   <section class="reading-room">
     <div class="reading-room-wrapper">
       <div class="content-index">
+        <div class="text-title">
+          <h3>READING LIST</h3>
+        </div>
         <ul>
           <li>
             <p id="bennet" class="link sidebar-items">Materia vibrante</p>
@@ -453,12 +457,34 @@
     </div>
   </section>
 
+  <section class="info" id="project">
+    <div class="info-wrapper">
+      <div class="text-box scroll-on-mobile">
+        <p>Lorem ipsum</p>
+        <div class="caption-wrapper">
+          <p style="margin-bottom: 20px;">You'll have a better experience of this page if
+            viewed on desktop.</p>
+          <p>Design & Code: Giulia Polenta</p>
+          <p>© 2024 Annamaria Ajmone</p>
+        </div>
+      </div>
+      <div id="close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 20.7 20.7" xml:space="preserve">
+          <line x1="0.3" y1="20.4" x2="20.4" y2="0.3" />
+          <line x1="20.4" y1="20.4" x2="0.3" y2="0.3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <div class="line"></div>
   <script type="text/javascript"
     src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
   <script type="text/javascript" src="/shader-frag.js"></script>
   <script type="text/javascript" src="/shader-canvas.js"></script>
   <script type="module" src="/main.js"></script>
+
 </body>
 
 </html>

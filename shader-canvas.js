@@ -13,7 +13,7 @@ const shader = () => {
     sandbox.setUniform("seed", Math.random());
 
     const checkbox = document.querySelector(".menu-switcher input");
-    const checkboxLabel = document.querySelector(".menu-switcher-label")
+    const checkboxLabel = document.querySelector(".menu-switcher-label");
     checkbox.addEventListener("change", () => {
         if (checkbox.checked == true) {
             canvas.remove();
