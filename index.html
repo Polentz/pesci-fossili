@@ -23,9 +23,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="shader.css">
 </head>
-<!-- onload="history.scrollRestoration = 'manual'" -->
 
-<body>
+<body onload="history.scrollRestoration = 'manual'">
   <div class="menu-mobile">
     <div class="menu-name">
       <a href="index.html">AA</a>
@@ -52,7 +51,8 @@
       <a id="info-btn" class="link menu-items">I pianti e i lamenti dei pesci fossili</a>
     </div>
   </nav>
-  <div class="cover"></div>
+
+  <section class="cover"></section>
 
   <section class="audio-section">
     <div class="audio-component">
@@ -531,12 +531,43 @@
   <section class="info" id="project">
     <div class="info-wrapper">
       <div class="text-box scroll-on-mobile">
-        <p>Lorem ipsum</p>
+        <div class="text-wrapper">
+          <p>Al confine sfumato tra organico e inorganico, tra vita e non-vita, il fossile è una testimonianza materiale
+            e poetica dello scorrere e dello stratificarsi del tempo. <em>I pianti e I lamenti dei pesci
+              fossili</em>&nbsp;tenta di costruire relazioni tra corpi e tempi
+            incommensurabilmente distanti e differenti, piangendo il ciclo eterno della trasformazione della materia,
+            della vita e della morte, nel contesto della Sesta Estinzione. Le possibilit&agrave; della relazione sono
+            esplorate dai corpi della danzatrici attraverso due interfacce: la pelle o membrana, che funge da motore del
+            movimento connettendo l&rsquo;interno e l&rsquo;esterno del corpo; e l'aria, che viene attraversata dalle
+            loro voci e trasformata in uno &ldquo;spazio prima di ogni localizzazione&rdquo;. Lo spettacolo prende la
+            forma di una progressiva stratificazione di pratiche corporee e vocali che richiama la struttura stessa del
+            fossile.
+          </p>
+          <p><strong>Anteprima: 10-11 settembre, Short Theatre (Roma)</strong>
+            <br><strong>Première: 25-26 ottobre, Triennale Teatro (Milano)</strong>
+          </p>
+        </div>
         <div class="caption-wrapper">
-          <p style="margin-bottom: 20px;">You'll have a better experience of this page if
-            viewed on desktop.</p>
-          <p>Design & Code: Giulia Polenta</p>
-          <p>© 2024 Annamaria Ajmone</p>
+          <p>danza e voce&nbsp;<strong>Annamaria Ajmone</strong>,<strong>Veza Maria Fernandez Wenger</strong>
+            <br>set e immagini&nbsp;<strong>Nat&aacute;lia Trejbalov&aacute;</strong>
+            <br>ricerca e collaborazione drammaturgica&nbsp;<strong>Stella Succi</strong>
+            <br>vestiti<strong>&nbsp;Fabio Quaranta</strong>
+            <br>disegno luci<strong>&nbsp;Elena Vastano</strong>
+            <br>consulenza set sonoro<strong>&nbsp;Attila Faravelli</strong>
+            <br>progetto web<strong>&nbsp;Giulia Polenta</strong>
+            <br>organizzazione<strong>&nbsp;Francesca d'Apolito</strong>
+            <br>diffusione<strong>&nbsp;Alessandra Simeoni</strong>
+            <br>produzione<strong>&nbsp;Associazione L&rsquo;altra</strong>
+            <br>
+            <br>Coproduzione: Triennale Milano Teatro; Fondazione del Teatro Grande di Brescia;
+            Festival Aperto/Fondazione i Teatri - Reggio Emilia; Centro Nazionale di Produzione della Danza Virgilio
+            Sieni; Snaporazverein; Short Theatre.
+            <br>In collaborazione con: Dialoghi &ndash; Residenze delle arti performative a Villa
+            Manin 2022 &ndash; 2024; nell&rsquo;ambito del progetto residenze coreografiche Lavanderia a Vapore; con il
+            sostegno di Primavera dei Teatri.
+            <br>Artista associata Triennale Teatro Milano 2021-2024.
+            <br>Compagnia finanziata da MiC - Ministero della cultura.
+          </p>
         </div>
       </div>
       <div id="close-btn">
@@ -550,6 +581,7 @@
   </section>
 
   <div class="line"></div>
+
   <script type="text/javascript"
     src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
   <script type="text/javascript" src="/shader-frag.js"></script>

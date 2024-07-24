@@ -56,7 +56,9 @@ img::-moz-selection,
 audio::-moz-selection,
 video::-moz-selection,
 div::-moz-selection,
-em::-moz-selection {
+em::-moz-selection,
+strong::-moz-selection,
+u::-moz-selection {
   color: #ff0055;
 }
 
@@ -72,7 +74,9 @@ img::selection,
 audio::selection,
 video::selection,
 div::selection,
-em::selection {
+em::selection,
+strong::selection,
+u::selection {
   color: #ff0055;
 }
 
