@@ -1,4 +1,3 @@
-import { animate } from 'motion';
 import {
     DirectionalLight,
     Mesh,
@@ -10,27 +9,17 @@ import {
 } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-animate(
-    '.grid-menu',
-    {
-        opacity: [0, 1],
-    },
-    { duration: 1 },
-);
-
 const object = (container, shape) => {
     const element = document.querySelector(".shape-container");
     const positionInfo = element.getBoundingClientRect();
     const elementHeight = positionInfo.height;
     const elementWidth = positionInfo.width;
 
-    // const camera = new PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
     const camera = new PerspectiveCamera(70, elementWidth / elementHeight, 0.1, 100);
     const scene = new Scene();
     const renderer = new WebGLRenderer({ antialias: true });
 
     renderer.setPixelRatio(window.devicePixelRatio);
-    // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setSize(elementWidth, elementHeight);
     renderer.setClearColor(0x000000, 0);
 
@@ -61,10 +50,8 @@ const object = (container, shape) => {
     controls.update();
 
     const resize = () => {
-        // camera.aspect = window.innerWidth / window.innerHeight;
         camera.aspect = elementWidth / elementHeight;
         camera.updateProjectionMatrix();
-        // renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setSize(elementWidth, elementHeight);
     };
 
@@ -96,7 +83,6 @@ const createTwo = () => {
 
 const createThree = () => {
     const container = document.querySelector("#irigaray-content .shape-container");
-    // const geometry = new TorusKnotGeometry(4, 0.8, 34, 20, 6, 9);
     const geometry = new TorusKnotGeometry(3.5, 0.6, 300, 20, 1, 7);
     const material = new MeshLambertMaterial({ color: 0xFEFBD8 });
     const shape = new Mesh(geometry, material);
@@ -121,7 +107,6 @@ const createFive = () => {
 
 const createSix = () => {
     const container = document.querySelector("#castrovillari-content .shape-container");;
-    // const geometry = new TorusKnotGeometry(2.5, 2.5, 300, 3, 2, 3);
     const geometry = new TorusKnotGeometry(3.5, 0.8, 300, 20, 8, 6);
     const material = new MeshLambertMaterial({ color: 0xBEC6A0 });
     const shape = new Mesh(geometry, material);
@@ -210,10 +195,32 @@ const documentHeight = () => {
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
 };
 
-window.addEventListener("resize", documentHeight)
+const switchDarkMode = () => {
+    const checkbox = document.querySelector(".menu-switcher input");
+    const checkboxLabel = document.querySelector(".menu-switcher-label");
+    const cover = document.querySelector(".cover");
+    const canvas = document.querySelector(".cover canvas");
+    checkbox.addEventListener("change", () => {
+        if (checkbox.checked == true) {
+            canvas.remove();
+            checkboxLabel.innerHTML = "Turn on background";
+            document.documentElement.setAttribute('data-theme', 'dark');
+
+        } else {
+            checkboxLabel.innerHTML = "Turn off background";
+            document.documentElement.setAttribute('data-theme', 'light');
+            setTimeout(() => {
+                cover.appendChild(canvas);
+            }, 500);
+        };
+    });
+};
+
 documentHeight();
 openElement("info-btn", "project", "open");
-openElement("info-btn-mobile", "project", "open")
+openElement("info-btn-mobile", "project", "open");
 openElement("close-btn", "project", "open");
 drawerOpener();
 audioPlayer();
+switchDarkMode();
+window.addEventListener("resize", documentHeight);
