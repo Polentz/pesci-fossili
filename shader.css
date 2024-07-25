@@ -634,7 +634,10 @@ input:checked+.slider:before {
   z-index: 2;
 }
 
-.text-title,
+.text-title {
+  margin-bottom: 20px;
+}
+
 .text-excerpt p:not(:last-of-type) {
   margin-bottom: 10px;
 }
