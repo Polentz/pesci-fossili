@@ -217,9 +217,9 @@ const switchDarkMode = () => {
 };
 
 documentHeight();
-openElement("info-btn", "project", "open");
-openElement("info-btn-mobile", "project", "open");
-openElement("close-btn", "project", "open");
+// openElement("info-btn", "project", "open");
+// openElement("info-btn-mobile", "project", "open");
+// openElement("close-btn", "project", "open");
 drawerOpener();
 audioPlayer();
 switchDarkMode();
